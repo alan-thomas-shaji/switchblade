@@ -54,10 +54,10 @@ module.exports = class Command {
     try {
       await this.handleRequirements(context, args)
     } catch (e) {
-      return this.error(context, e)
+      return this.client.logger.error(context, e)
     }
 
-    const [ subcmd ] = args
+    const [subcmd] = args
     const subcommand = this.subcommands.find(c => c.name.toLowerCase() === subcmd || (c.aliases && c.aliases.includes(subcmd)))
     if (subcommand) {
       return subcommand._run(context, args.splice(1))
@@ -66,7 +66,7 @@ module.exports = class Command {
     try {
       args = await this.handleParameters(context, args)
     } catch (e) {
-      return this.error(context, e)
+      return this.client.logger.error(context, e)
     }
 
     this.applyCooldown(context.author)
@@ -75,7 +75,7 @@ module.exports = class Command {
       const result = await this.run(context, ...args)
       return result
     } catch (e) {
-      this.error(context, e)
+      this.client.logger.error(context, e)
     }
   }
 

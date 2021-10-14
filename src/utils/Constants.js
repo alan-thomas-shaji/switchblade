@@ -40,6 +40,8 @@ module.exports = {
   PACKAGIST_COLOR: '#d8dff2',
   WIKIPEDIA_COLOR: '#e6e6e8',
   STEAM_COLOR: '#1b2838',
+  MERRIAM_WEBSTER_COLOR: '#375c71',
+  FIVEM_COLOR: '#ff8637',
 
   // Emojis
 
@@ -89,6 +91,8 @@ module.exports = {
   HERE_WE_GO_AGAIN_PNG: 'src/assets/png/ashwga.png',
   KANNA_PAPER_TEMPLATE: 'src/assets/png/kanna_paper_template.png',
   PRESIDENTIAL_ALERT_TEMPLATE: 'src/assets/jpg/presidential_alert.jpg',
+  PLACA_MERCOSUL_PNG: 'src/assets/png/placaMercosul.png',
+  OLD_PLATE_PNG: 'src/assets/png/oldPlate.png',
   // Backgrounds
   DEFAULT_BACKGROUND_PNG: 'src/assets/png/backgrounds/default.png',
   DEFAULT_BACKGROUND_GRAY_PNG: 'src/assets/png/backgrounds/default_gray.png',

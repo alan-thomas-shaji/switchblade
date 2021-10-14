@@ -713,6 +713,47 @@ module.exports = class CanvasTemplates {
     return canvas.toBuffer()
   }
 
+  static async plateMercosul (text, buffer) {
+    const WIDTH = 1920
+    const HEIGHT = 672
+    const IMAGE_ASSETS = Promise.all([
+      Image.from(Constants.PLACA_MERCOSUL_PNG, true),
+      Image.from(buffer)
+    ])
+    const [background, state] = await IMAGE_ASSETS
+    const canvas = createCanvas(WIDTH, HEIGHT)
+    const ctx = canvas.getContext('2d')
+    ctx.fillStyle = '#363536'
+
+    const PARAGRAPH_START_X = 960
+    const PARAGRAPH_START_Y = 373
+    const PARAGRAPH_HEIGHT = 10
+    const PARAGRAPH_WIDTH = 1920
+
+    ctx.drawImage(background, 0, 0, WIDTH, HEIGHT)
+    ctx.drawImage(state, 1720, 241, 114, 76)
+    ctx.writeParagraph(text, '302px "FE-Font"', PARAGRAPH_START_X, PARAGRAPH_START_Y, PARAGRAPH_START_X + PARAGRAPH_WIDTH, PARAGRAPH_START_Y + PARAGRAPH_HEIGHT, 100, ALIGN.CENTER)
+    return canvas.toBuffer()
+  }
+
+  static async oldPlate (plate, city) {
+    const WIDTH = 1920
+    const HEIGHT = 624
+    const background = await Image.from(Constants.OLD_PLATE_PNG)
+    const canvas = createCanvas(WIDTH, HEIGHT)
+    const ctx = canvas.getContext('2d')
+
+    const PARAGRAPH_START_X = 960
+    const PARAGRAPH_START_Y = 372
+    const PARAGRAPH_HEIGHT = 10
+    const PARAGRAPH_WIDTH = 1920
+
+    ctx.drawImage(background, 0, 0, WIDTH, HEIGHT)
+    ctx.writeParagraph(city, '80px "Mandatory"', PARAGRAPH_START_X, 160, PARAGRAPH_START_X + PARAGRAPH_WIDTH, PARAGRAPH_START_Y + PARAGRAPH_HEIGHT, 10, ALIGN.CENTER)
+    ctx.writeParagraph(plate, '320px "Mandatory"', PARAGRAPH_START_X, PARAGRAPH_START_Y, PARAGRAPH_START_X + PARAGRAPH_WIDTH, PARAGRAPH_START_Y + PARAGRAPH_HEIGHT, 10, ALIGN.CENTER)
+    return canvas.toBuffer()
+  }
+
   static async quieres (buffer) {
     const IMAGE_ASSETS = Promise.all([
       Image.from(Constants.QUIERES_HAND_PNG, true),
@@ -724,7 +765,16 @@ module.exports = class CanvasTemplates {
     const canvas = createCanvas(WIDTH, HEIGHT)
     const ctx = canvas.getContext('2d')
     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT)
-    ctx.drawImage(hand, WIDTH - hand.width, HEIGHT - hand.height, hand.width, hand.height)
+
+    let HAND_WIDTH = WIDTH * 0.6
+    let HAND_HEIGHT = HAND_WIDTH
+
+    if (WIDTH > HEIGHT) {
+      HAND_HEIGHT = HEIGHT * 0.6
+      HAND_WIDTH = HAND_HEIGHT
+    }
+
+    ctx.drawImage(hand, WIDTH - HAND_WIDTH, HEIGHT - HAND_HEIGHT, HAND_WIDTH, HAND_HEIGHT)
     return canvas.toBuffer()
   }
 
@@ -733,7 +783,7 @@ module.exports = class CanvasTemplates {
       Image.from(Constants.HERE_WE_GO_AGAIN_PNG, true),
       Image.from(buffer)
     ])
-    const [ template, image ] = await IMAGE_ASSETS
+    const [template, image] = await IMAGE_ASSETS
     const WIDTH = image.width
     const HEIGHT = image.height
     const canvas = createCanvas(WIDTH, HEIGHT)

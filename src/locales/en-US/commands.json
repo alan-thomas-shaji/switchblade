@@ -39,9 +39,6 @@
   "thinking": {
     "commandDescription": "Shows a random :thinking: image from /r/thinking."
   },
-  "adorable": {
-    "commandDescription": "Generates an adorable avatar."
-  },
   "avatar": {
     "commandDescription": "Shows yours or someone else's avatar.",
     "commandUsage": "[user]",
@@ -1654,7 +1651,12 @@
     "stolen": "Stolen! Please call 911, don't approach yourself.",
     "plate": "Plate",
     "image": "Car image (may not be the accurate image)",
-    "notFound": "Plate not found."
+    "notFound": "Plate not found.",
+    "type": "Vehicle type",
+    "maxtorque": "Max Torque",
+    "engineCapacity": "Engine capacity",
+    "nationality": "Nationality",
+    "fuelType": "Fuel type"
   },
   "cep": {
     "commandDescription": "Searches for a CEP using ViaCEP API",
@@ -1933,5 +1935,27 @@
     "released": "Released {{ago}}",
     "comingSoon": "Coming soon",
     "metacriticScore": "Metacritic Score"
+  },
+  "merriamwebster": {
+    "commandDescription": "Lookup word definitions on the Merriam Webster dictionary",
+    "commandUsage": "<word>",
+    "title": "Merriam Webster Dictionary"
+  },
+  "bmi": {
+    "commandDescription": "Calculates your BMI",
+    "commandUsage": "<weigth in kilograms> <height in meters>",
+    "missingWeight": "You have to specify a valid weight in kilograms.",
+    "missingHeight": "You have to specify a valid height in kilograms.",
+    "title": "Your BMI is {{value}}",
+    "description": "That means you are {{category}}",
+    "footer": "More information: https://en.wikipedia.org/wiki/Body_mass_index",
+    "categoryVerySeverelyUnderweight": "Very severely underweight",
+    "categorySeverelyUnderweight": "Severely Underweight",
+    "categoryUnderweight": "Underweight",
+    "categoryNormal": "Normal (healthy weight)",
+    "categoryOverweight": "Overweight",
+    "categoryObese1": "Obese Class I (Moderately obese)",
+    "categoryObese2": "Obese Class II (Severely obese)",
+    "categoryObese3": "Obese Class III (Very severely obese)"
   }
 }

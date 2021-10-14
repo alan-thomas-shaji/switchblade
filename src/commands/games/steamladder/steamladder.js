@@ -59,7 +59,7 @@ module.exports = class SteamLadder extends Command {
     if (ladderType === 'age') ladderType = 'steam_age'
     if (regionOrCountry) regionOrCountry = regionOrCountry.toLowerCase()
 
-    let embed = new SwitchbladeEmbed(author)
+    const embed = new SwitchbladeEmbed(author)
     try {
       const steamLadderResponse = await this.client.apis.steamladder.getLadder(ladderType, regionOrCountry)
       embed
@@ -68,7 +68,7 @@ module.exports = class SteamLadder extends Command {
         .setAuthor('Steam Ladder', 'https://i.imgur.com/tm9VKhD.png')
         .setColor(embedColor)
     } catch (e) {
-      this.client.logError(e)
+      this.client.logger.error(e)
       throw new CommandError(t('commands:steamladder.ladderNotFound'))
     }
     channel.send(embed).then(channel.stopTyping())
