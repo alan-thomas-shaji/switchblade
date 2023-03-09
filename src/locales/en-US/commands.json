@@ -672,6 +672,11 @@
     "commandUsage": "<text>",
     "noText": "You have to give me some text to asciify!"
   },
+  "lorem": {
+    "commandDescription": "Generates a random lorem ipsum text with the specified amount of paragraphs.",
+    "commandUsage": "<number of paragraphs>",
+    "noNumber": "You have to give me a number of paragraphs between 1 and 10!"
+  },
   "hentai": {
     "commandDescription": "Sends hentai in an NSFW channel.",
     "hereIsYourHentai": "Here's your hentai!"
@@ -1003,7 +1008,8 @@
         "commandUsage": "<username/UUID>",
         "noName": "You have to give me a username or a UUID.",
         "unknownName": "Name or UUID not found.",
-        "title": "{{name}}'s skin!"
+        "title": "{{name}}'s skin!",
+        "thanks": "Thank you to [Crafatar]({{url}}) for providing the avatars."
       },
       "namehistory": {
         "commandDescription": "Shows the previous names of a Minecraft player, by username or UUID.",
@@ -1638,26 +1644,6 @@
     "post": "Post URL",
     "noQuery": "You have to give me something to search!"
   },
-  "searchplate": {
-    "commandDescription": "Searches for a brazilian vehicle plate registration on SINESP (Public information)",
-    "commandUsage": "<plate>",
-    "model": "Model",
-    "year": "Year",
-    "color": "Color",
-    "city": "City",
-    "status": "Status",
-    "chassis": "Chassis",
-    "notstolen": "Not Stolen",
-    "stolen": "Stolen! Please call 911, don't approach yourself.",
-    "plate": "Plate",
-    "image": "Car image (may not be the accurate image)",
-    "notFound": "Plate not found.",
-    "type": "Vehicle type",
-    "maxtorque": "Max Torque",
-    "engineCapacity": "Engine capacity",
-    "nationality": "Nationality",
-    "fuelType": "Fuel type"
-  },
   "cep": {
     "commandDescription": "Searches for a CEP using ViaCEP API",
     "commandUsage": "<cep>",
@@ -1677,12 +1663,6 @@
   },
   "shards": {
     "commandDescription": "Shows information about the bot's shards"
-  },
-  "correios": {
-    "commandDescription": "Shows information about a tracking code from ECT (Brazilian Post and Telegraph Corporation)",
-    "commandUsage": "<tracking code>",
-    "lastUpdated": "Last Updated at",
-    "notFound": "Code not found"
   },
   "render": {
     "youDontHavePermission": "You're missing the following permission in that channel: {{permission}}",
@@ -1824,16 +1804,6 @@
     "version": "Release Version",
     "download": "Download"
   },
-  "auxilioemergencial": {
-    "commandDescription": "Searches for a CPF or NIS on \"Portal da Transparência\" for the Emergencial Assistance.",
-    "commandUsage": "<cpf or nis>",
-    "name": "Name",
-    "cpf": "CPF",
-    "nis": "NIS",
-    "amount": "Amount",
-    "city": "City",
-    "notFound": "CPF or NIS not found."
-  },
   "giverole": {
     "commandDescription": "Gives a role to a member",
     "commandUsage": "<member> <role>",
@@ -1957,5 +1927,51 @@
     "categoryObese1": "Obese Class I (Moderately obese)",
     "categoryObese2": "Obese Class II (Severely obese)",
     "categoryObese3": "Obese Class III (Very severely obese)"
+  },
+  "flightradar24": {
+    "commandDescription": "Searches for an aircraft on Flightradar24.",
+    "commandUsage": "<aircraft registration/aircraft ICAO code/aircraft callsign>",
+    "airline": "Airline",
+    "live": "Live",
+    "locatedIn": "Located in",
+    "expectedArrival": "Expected arrival",
+    "copyright": "Copyright ©",
+    "dataBy": "Data by",
+    "photoBy": "Photo by",
+    "departed": "Departed",
+    "notFound": "Aircraft not found",
+    "noCallsign": "NO CALLSIGN"
+  },
+  "drawcard": {
+    "commandDescription": "Generates a random set of cards.",
+    "commandUsage": "<amount of cards>",
+    "title": "Drew {{number}} cards.",
+    "missingNumber": "You need to give me a number between 1 and 10.",
+    "card0": "Ace",
+    "card11": "Jack",
+    "card12": "Queen",
+    "card13": "King"
+  },
+  "brew": {
+    "commandUsage": "<formulae>",
+    "commandDescription": "Returns homebrew data for a given formulae",
+    "title": "Homebrew Info For {{name}}",
+    "description": "Description",
+    "analytics": "Analytics",
+    "30d": "30 Day Downloads",
+    "90d": "90 Day Downloads",
+    "365d": "365 Day Downloads",
+    "links": "Links",
+    "homebrewLink": "Homebrew Link",
+    "homePage": "Home Page",
+    "missingFormulae": "You have to specify a valid formulae.",
+    "invalidFormulae": "This formulae is unknown please try another."
+  },
+  "howlongtobeat": {
+    "title": "How long to beat {{game}}",
+    "commandDescription": "Calculates the length of time it takes to beat a game",
+    "commandUsage": "<game>",
+    "missingGame": "You have to specify a valid game.",
+    "invalidGame": "Could not find the game you specified. Please, try another one."
   }
 }
